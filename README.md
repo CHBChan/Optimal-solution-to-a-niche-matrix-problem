@@ -85,7 +85,7 @@ if **N** = **M**, the last element is at index [Floor(**N**/2)][Floor(**M**/2)]
 | ------------- | -------------------- | ------------------ |
 | N = M         | N/A                  | [Floor(N/2)]  [Floor(M/2)] |
 | N             | Odd                  | [Floor(N/2)]  [Floor(N/2) + 2*Ceil((M-N+1)/2) - 2] |
-| N             | Even                 | [Floor((N-1)/2)]  [Floor(N-1/2) + 2] |
+| N             | Even                 | [Floor((N-1)/2)]  [Floor((N-1)/2) + 2] |
 | M             | Odd                  | [Floor(M/2) + 2*Ceil((N-M+1)/2) - 2]  [Floor(M/2)] |
 | M             | Even                 | [Floor(M/2]  [Floor(M/2)] |
 
