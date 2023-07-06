@@ -40,9 +40,9 @@ Solution: Since there are no more cells left to traverse, your last traversed el
 
 Looking at the problem, it would be tempting to just brute force the problem and obtain the solution. However, keep in mind that there were no constraints given to me on **N** or **M**. The only assumption I could make is that both must be at least 1 to qualify the input to be a matrix. Based on that, combined with the fact that the resulting code would be unnecessarily convoluted, I decided to instead find a generalized solution for any **N** ≥ 1 and **M** ≥ 1, a solution that has a lower time complexity than O(**N * M**). 
 
-<sub>Spoilers: I was unable to complete the problem in the 70 minutes allocated.</sub>
+<sub>Spoiler: I was unable to complete the problem in the 70 minutes allocated.</sub>
 
-After the assessment ended, I was left frustrated because I was certain that there was a pattern in the problem that I missed. In addition, I thought the problem itself was really interesting, so I decided to turn to my friend, who happened to major in Mathematics for advice. It so happened that this problem also interested him, and he throw out several suggestions that could potentially help me reach a generalized solution. Two of which were:
+After the assessment ended, I was left frustrated because I was certain that there was a pattern in the problem that I missed. But, I thought the problem itself was really interesting, so I decided to turn to my friend, who happened to major in Mathematics for advice. It so happened that this problem also interested him, and he throw out several suggestions that could potentially help me reach a generalized solution. Two of which were:
 1. Make a table to see if there were any obvious patterns
 2. Reduce the matrix to smaller ones
 
