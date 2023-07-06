@@ -52,7 +52,7 @@ I was creating a table when I realized how to reduce the matrix into smaller one
 
 The main concept you must grasp is the fact that due to the way the problem was set up, you will eventually traverse to cells that are directly diagonal to the starting cell at Row(0), Col(0). If we refer back to example two:
 
-![image](https://github.com/CHBChan/Finding-the-last-cell-of-the-matrix/assets/81986429/59c53641-f953-4af8-bb3f-1380f80e0305)
+![image](https://github.com/CHBChan/Optimal-solution-to-a-niche-matrix-problem/assets/81986429/07ba72ff-90bb-429e-adbf-881a6b55b477)
 
 We can see that we must eventually reach the 3rd, 8th, and 9th cells that are directly diagonal to the 0th cell. It meant that we could essentially discard the outer cells, that is cells 0 to 7, and solve it as though we're working with a 2x4 matrix instead of a 3x5. We can't discard anything else in this example as we must preserve the overall shape of the matrix to ensure that the new starting cell (8th cell) must be at Row(0), Col(0). You can see from here that we lowered the number of cells we needed to visit from 12 to only 4. If we expand the theoretical input to a matrix of size 1024x631, the effects are much more apparent, as this reduction can be done recursively until you are only working with a matrix of size 394x1. But there is more. Due to the fact that we are working with reduction, we must establish the patterns and base cases (courtesy to the table I made).
 
