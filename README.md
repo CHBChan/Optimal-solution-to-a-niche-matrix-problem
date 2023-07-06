@@ -89,4 +89,4 @@ if **N** = **M**, the last element is at index [Floor(**N**/2)][Floor(**M**/2)]
 | M             | Odd                  | [Floor(M/2) + 2*Ceil((N-M+1)/2) - 2]  [Floor(M/2)] |
 | M             | Even                 | [Floor(M/2]  [Floor(M/2)] |
 
-By using one of these equations instead, you can drastically reduce the time complexity of the problem from O(N * M) to O(1) without having to use any data structures. I really enjoyed solving this problem because this is one of the rarer cases where you can use raw mathematics to derive the optimal solution. 
+By using one of these equations instead, you can drastically reduce the time complexity of the problem from O(N * M) to O(1) without having to use any data structures. I really enjoyed solving this problem because it is a rare case of a problem that can be optimized relatively easily using only mathematics. On a side note, this problem is so niche I don't see any practical applications for it outside of maybe being used in grid-based games.
