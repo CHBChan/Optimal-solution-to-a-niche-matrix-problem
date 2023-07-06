@@ -38,22 +38,22 @@ Ex 2.
 
 Solution: Since there are no more cells left to traverse, your last traversed element is then 94.
 
-Looking at the problem, it would be tempted to just brute force the problem and obtain the solution. However, keep in mind that there were no constraints given to me on **N** or **M**. The only assumption I could make is that both must at least 1 to qualify the input to be a matrix. Based on that, combined with the fact that the resulting code would be unnecessarily convoluted, I decided to instead find a generalized solution for any **N** ≥ 1 and **M** ≥ 1, a solution that has a lower time complexity than O(**N * M**). 
+Looking at the problem, it would be tempting to just brute force the problem and obtain the solution. However, keep in mind that there were no constraints given to me on **N** or **M**. The only assumption I could make is that both must be at least 1 to qualify the input to be a matrix. Based on that, combined with the fact that the resulting code would be unnecessarily convoluted, I decided to instead find a generalized solution for any **N** ≥ 1 and **M** ≥ 1, a solution that has a lower time complexity than O(**N * M**). 
 
 <sub>Spoilers: I was unable to complete the problem in the 70 minutes allocated.</sub>
 
-After the assessment ended, I was left frustrated because I was certain that there was a pattern in the problem that I missed. In addition, I thought the problem itself was really interesting, so I decided to turn to my friend, who happened to major in Mathematics for advice. It so happened that this problem also interested him, and he throw out several suggestions that could potentially help me reach the generalized solution. Two of which was:
+After the assessment ended, I was left frustrated because I was certain that there was a pattern in the problem that I missed. In addition, I thought the problem itself was really interesting, so I decided to turn to my friend, who happened to major in Mathematics for advice. It so happened that this problem also interested him, and he throw out several suggestions that could potentially help me reach a generalized solution. Two of which were:
 1. Make a table to see if there were any obvious patterns
 2. Reduce the matrix to smaller ones
 
-I was creating a table when I realized how to reduce the matrix into smaller ones that would take much much less time to solve. 
-**This method only works if you traverse the matrix in a spiral pattern normally or traverse alternate cells. It would not work if you were to skip multiple cells each jump.**
+I was creating a table when I realized how to reduce the matrix into smaller ones that would take much less time to solve. 
+**This method only works if you traverse the matrix in a spiral pattern normally or traverse alternate cells. It would not work if you were to skip multiple cells for each jump.**
 
-The main concept you must grasp is the fact that, due to the way the problem was set up, you will eventually traverse to cells that are directly diagonal to the starting cell at Row(0), Col(0). If we refer back to example two:
+The main concept you must grasp is the fact that due to the way the problem was set up, you will eventually traverse to cells that are directly diagonal to the starting cell at Row(0), Col(0). If we refer back to example two:
 
 ![image](https://github.com/CHBChan/Finding-the-last-cell-of-the-matrix/assets/81986429/59c53641-f953-4af8-bb3f-1380f80e0305)
 
-We can see that we must eventually reach the 3rd, 8th, and 9th cells that are directly diagonal to the 0th cell. It meant that we could essentially discard the outer cells, that is cells 0 to 7, and solve it as though we're working with a 2x4 matrix instead of a 3x5. We can't discard anything else in this example as we must preserve the overall shape of the matrix to ensure that the "starting" cell (8th cell) must be at Row(0), Col(0). You can see from here that we lowered the amount of cells we needed to visit from 12 to only 4. If we expand the theoretical input to a matrix of size 1024x631, the effects are much more apparent, as this reduction can be done recursively until you are only working with a matrix of size 394x1. But there is more. Due to the fact that we are working with reduction, we must establish the patterns and base cases (courtesy to the table I made).
+We can see that we must eventually reach the 3rd, 8th, and 9th cells that are directly diagonal to the 0th cell. It meant that we could essentially discard the outer cells, that is cells 0 to 7, and solve it as though we're working with a 2x4 matrix instead of a 3x5. We can't discard anything else in this example as we must preserve the overall shape of the matrix to ensure that the new starting cell (8th cell) must be at Row(0), Col(0). You can see from here that we lowered the number of cells we needed to visit from 12 to only 4. If we expand the theoretical input to a matrix of size 1024x631, the effects are much more apparent, as this reduction can be done recursively until you are only working with a matrix of size 394x1. But there is more. Due to the fact that we are working with reduction, we must establish the patterns and base cases (courtesy to the table I made).
 
 ## Recursive reduction patterns:
 
@@ -66,6 +66,17 @@ if **N** > **M**, and **M** is odd, the matrix can be reduced to size **(N - M +
 if **N** > **M**, and **M** is even, the matrix can be reduced to size **(N - M + 2) x 2**
 
 # Solution
+
+Keep in mind that this specific solution only works for the exact scenario in that:
+1. You begin at [0][0]
+2. You traverse counter-clockwise
+3. You skip alternate cells
+
+Condition 1 cannot be changed
+
+Condition 2 can be changed to clockwise and the general process to derive the solution will still apply
+
+Condition 3 can only be changed to not skipping any cells to retain the same process, aka this process fails when trying to skip n cells at each step (n > 1)
 
 ## Base cases:
 
@@ -89,4 +100,6 @@ if **N** = **M**, the last element is at index [Floor(**N**/2)][Floor(**M**/2)]
 | M             | Odd                  | [Floor(M/2) + 2*Ceil((N-M+1)/2) - 2]  [Floor(M/2)] |
 | M             | Even                 | [Floor(M/2]  [Floor(M/2)] |
 
-By using one of these equations instead, you can drastically reduce the time complexity of the problem from O(N * M) to O(1) without having to use any data structures. I really enjoyed solving this problem because it is a rare case of a problem that can be optimized relatively easily using only mathematics. On a side note, this problem is so niche I don't see any practical applications for it outside of maybe being used in grid-based games.
+By using one of these equations instead, you can drastically reduce the time complexity of the problem from O(N * M) to O(1) without having to use any data structures. I really enjoyed solving this problem because it is a rare case of a problem that can be optimized relatively easily using only mathematics. 
+
+On a side note, this problem is so niche I don't see any practical applications for it outside of maybe being used in grid-based games.
