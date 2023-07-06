@@ -1,4 +1,4 @@
-# Finding the last accessed cell of the matrix when traversing in a spiral pattern
+# Finding the last accessed cell of the matrix when traversing in a spiral pattern while skipping alternate cells
 
 Recently I sent a job application for a Software Engineer position and received an email to take their online assessment shortly afterward.
 I don't think I can tell you which company I applied to, but I was given 90 minutes to solve three technical problems. The first two problems were relatively easy so I finished them in around 20 minutes. But I thought the third problem I was tasked to solve was rather interesting.
@@ -83,10 +83,10 @@ if **N** = **M**, the last element is at index [Floor(**N**/2)][Floor(**M**/2)]
 
 | Smaller value | Smaller value parity | Last accessed cell |
 | ------------- | -------------------- | ------------------ |
-| N = M         | N/A                  | [Floor(N/2)][Floor(M/2)] |
-| N             | Odd                  | [Floor(N/2)][Floor(N/2) + 2*Ceil((M-N+1)/2) - 2] |
-| N             | Even                 | [Floor((N-1)/2)][Floor(N-1/2) + 2] |
-| M             | Odd                  | [Floor(M/2) + 2*Ceil((N-M+1)/2) - 2][Floor(M/2)] |
-| M             | Even                 | [Floor(M/2][Floor(M/2)] |
+| N = M         | N/A                  | [Floor(N/2)]  [Floor(M/2)] |
+| N             | Odd                  | [Floor(N/2)]  [Floor(N/2) + 2*Ceil((M-N+1)/2) - 2] |
+| N             | Even                 | [Floor((N-1)/2)]  [Floor(N-1/2) + 2] |
+| M             | Odd                  | [Floor(M/2) + 2*Ceil((N-M+1)/2) - 2]  [Floor(M/2)] |
+| M             | Even                 | [Floor(M/2]  [Floor(M/2)] |
 
 By using one of these equations instead, you can drastically reduce the time complexity of the problem from O(N * M) to O(1) without having to use any data structures. I really enjoyed solving this problem because this is one of the rarer cases where you can use raw mathematics to derive the optimal solution. 
