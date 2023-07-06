@@ -11,7 +11,7 @@ Given a matrix with **N** rows and **M** columns, find the last element you trav
 ## Here are two examples (Not taken from the assessments):
 Ex 1.
 
-![image](https://github.com/CHBChan/Finding-the-last-cell-of-the-matrix/assets/81986429/0812f395-d789-4d9c-87f3-9c925797da98)
+![image](https://github.com/CHBChan/Optimal-solution-to-a-niche-matrix-problem/assets/81986429/d2bb6398-9d7e-4126-88c0-0ca505820f39)
 1. You begin at the 0th cell of value 31 (labeled by the black integer)
 2. You jump to the 1st cell of value 76
 3. You jump to the 2nd cell of value 10
@@ -22,7 +22,8 @@ Solution: Since there are no more cells left to traverse, your last traversed el
 
 Ex 2.
 
-![image](https://github.com/CHBChan/Finding-the-last-cell-of-the-matrix/assets/81986429/59c53641-f953-4af8-bb3f-1380f80e0305)
+![image](https://github.com/CHBChan/Optimal-solution-to-a-niche-matrix-problem/assets/81986429/07ba72ff-90bb-429e-adbf-881a6b55b477)
+
 1. You being at the 0th cell of value 64
 2. You jump to the 1st cell of value 47
 3. You jump to the 2nd cell of value 49
